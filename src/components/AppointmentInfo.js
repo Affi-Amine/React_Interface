@@ -17,3 +17,5 @@ const AppointmentInfo = ({ appointment }) => {
         </li>
     )
 }
+
+export default AppointmentInfo
