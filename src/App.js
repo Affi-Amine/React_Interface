@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect } from "react";
-import { BiCalendar, BiTrash } from "react-icons/bi"
+import { BiCalendar} from "react-icons/bi"
 import Search from "./components/Search"
 import AddAppointment from "./components/AddAppointment";
 import AppointmentInfo from "./components/AppointmentInfo";
@@ -49,7 +49,10 @@ function App() {
           sortBy = {sortBy}
           onSortByChange={mySort => setSortBy(mySort)}
         />
-        <AddAppointment />
+        <AddAppointment 
+          onSendAppointment={myAppointment => setAppointmentList([...appointmentList, myAppointment])}
+          lastId={appointmentList.reduce((max, item) => Number(item.id) > max ? Number(item.id) : max, 0)}
+        />
         <ul className="divide-y divide-gray-200">
         { filteredAppointments
           .map(appointment => (
