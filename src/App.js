@@ -18,7 +18,7 @@ function App() {
   useEffect(() => {
     fetchData()
   }, [fetchData])
-  
+
   return (
     <div className="App container mx-auto mt-3 font-thin">
       <h1 className="text-5xl">
@@ -31,6 +31,10 @@ function App() {
             <AppointmentInfo 
               key = { appointment.key }
               appointment = {appointment}
+              onDeleteAppointment={
+                appointmentId => 
+                  setAppointmentList(appointmentList.filter(appointment => appointment.id !== appointmentId)) 
+              }
             />
           ))
         }
