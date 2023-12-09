@@ -44,6 +44,10 @@ function App() {
         <BiCalendar className="mr-2 inline-block text-red-400 align-top" />Your Appointments</h1>
         <Search query = {query}
           onQueryChange={myQuery => setQuery(myQuery)}
+          orderBy = {orderBy}
+          onOrderByChange={mySort =>setOrderBy(mySort)}
+          sortBy = {sortBy}
+          onSortByChange={mySort => setSortBy(mySort)}
         />
         <AddAppointment />
         <ul className="divide-y divide-gray-200">
